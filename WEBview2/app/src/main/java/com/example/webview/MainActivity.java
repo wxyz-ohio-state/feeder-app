@@ -7,10 +7,14 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import java.lang.String;
 
 public class MainActivity extends Activity implements View.OnClickListener{
     private WebView webView;
     private Button bt;
+
+    private String url = "http://192.168.137.97";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +26,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     }
     public void onClick(View v) {
-        webView.loadUrl("http://192.168.137.236");
+        webView.loadUrl(url);
     }
 
     private void init(){
         webView = (WebView) findViewById(R.id.webview);
         //WebView加载web资源
-        webView.loadUrl("http://192.168.137.236");
+        webView.loadUrl("http://192.168.137.97");
         //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
         webView.setWebViewClient(new WebViewClient(){
             @Override
